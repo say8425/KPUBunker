@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: bunker
   password: Ba542600-
-  host: localhostra
+  host: localhost
 
 development:
   <<: *default
