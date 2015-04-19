@@ -13,9 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
-  host: localhost
+  username: bunker
+  password: Ba542600-
+  host: localhostra
 
 development:
   <<: *default
@@ -50,5 +50,3 @@ test:
 production:
   <<: *default
   database: Bunker_production
-  username: Bunker
-  password: <%= ENV['BUNKER_DATABASE_PASSWORD'] %>
