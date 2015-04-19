@@ -14,31 +14,47 @@
 ActiveRecord::Schema.define(version: 20150419124423) do
 
   create_table "lectures", force: :cascade do |t|
-    t.string   "name",       limit: 255, null: false
-    t.integer  "grade",      limit: 4,   null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",         limit: 255, null: false
+    t.integer  "grade",        limit: 4,   null: false
+    t.integer  "major_id",     limit: 4
+    t.integer  "professor_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
+
+  add_index "lectures", ["major_id"], name: "index_lectures_on_major_id", using: :btree
+  add_index "lectures", ["professor_id"], name: "index_lectures_on_professor_id", using: :btree
 
   create_table "majors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
+    t.integer  "lecture_id", limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
+  add_index "majors", ["lecture_id"], name: "index_majors_on_lecture_id", using: :btree
+
   create_table "professors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
+    t.integer  "major_id",   limit: 4
+    t.integer  "lecture_id", limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  add_index "professors", ["lecture_id"], name: "index_professors_on_lecture_id", using: :btree
+  add_index "professors", ["major_id"], name: "index_professors_on_major_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating_unit",    limit: 4
     t.integer  "rating_quality", limit: 4
     t.text     "content",        limit: 65535
+    t.integer  "lecture_id",     limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
+
+  add_index "reviews", ["lecture_id"], name: "index_reviews_on_lecture_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

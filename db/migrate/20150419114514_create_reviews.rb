@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :rating_quality
       t.text    :content
 
+      t.belongs_to :lecture, index: true
       t.timestamps null: false
     end
   end
