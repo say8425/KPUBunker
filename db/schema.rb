@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419124423) do
+ActiveRecord::Schema.define(version: 20150620105916) do
 
   create_table "lectures", force: :cascade do |t|
     t.string   "name",         limit: 255, null: false
-    t.integer  "grade",        limit: 4,   null: false
+    t.float    "grade",        limit: 24
     t.integer  "major_id",     limit: 4
     t.integer  "professor_id", limit: 4
     t.datetime "created_at",               null: false
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150419124423) do
   add_index "professors", ["major_id"], name: "index_professors_on_major_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "rating_unit",    limit: 4
-    t.integer  "rating_quality", limit: 4
+    t.float    "rating_unit",    limit: 24
+    t.float    "rating_quality", limit: 24
     t.text     "content",        limit: 65535
     t.integer  "lecture_id",     limit: 4
     t.datetime "created_at",                   null: false
