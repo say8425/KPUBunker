@@ -46,3 +46,7 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+.idea/atlassian-ide-plugin.xml
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/dataSources.xml
