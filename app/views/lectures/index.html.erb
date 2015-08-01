@@ -8,16 +8,16 @@
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>name</td>
+            <td>major</td>
+            <td>grade</td>
+            <td>professors</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
         <% @lectures.each do |lecture| %>
-          <tr>
-              <td>name</td>
-              <td>major</td>
-              <td>grade</td>
-              <td>professors</td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
           <tr>
               <td><%= lecture.name %></td>
               <td><%= lecture.major_id %></td>
