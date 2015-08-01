@@ -1,25 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12 col-sm-9">
+    <h1>Listing Lectures</h1>
 
-<h1>Listing Lectures</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="3"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @lectures.each do |lecture| %>
+          <tr>
+              <td>name</td>
+              <td>major</td>
+              <td>grade</td>
+              <td>professors</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td><%= lecture.name %></td>
+              <td><%= lecture.major_id %></td>
+              <td><%= lecture.professor_id %></td>
+              <td><%= lecture.grade %></td>
+              <td><%= link_to 'Show', lecture %></td>
+              <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+              <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+    </table>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <br>
 
-  <tbody>
-    <% @lectures.each do |lecture| %>
-      <tr>
-        <td><%= link_to 'Show', lecture %></td>
-        <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
-        <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Lecture', new_lecture_path %>
+    <%= link_to 'New Lecture', new_lecture_path %>
+</div>
