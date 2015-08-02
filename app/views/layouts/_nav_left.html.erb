@@ -1,16 +1,8 @@
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+<div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
     <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#" data-toggle="collapse" data-target="#sub1">Link 4 (submenu)</a>
-            <ul class="nav collapse" id="sub1">
-                <li><a href="#">Sub Link 1</a></li>
-                <li><a href="#">Sub Link 2</a></li>
-                <li><a href="#">Sub Link 3</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Link 5</a></li>
+        <li><%= link_to 'KPU Bunker', root_path %></li>
+        <li><%= link_to 'L O G I N', new_user_session_path %></li>
+        <li><%= link_to 'G A M E', lectures_path(:major_id => 2) %></li>
+        <li><%= link_to 'C O M P U T E R', lectures_path(:major_id => 1) %></li>
     </ul>
 </div>

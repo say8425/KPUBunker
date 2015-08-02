@@ -1,10 +1,10 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
+  before_action :set_major, only:  [:index]
 
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
   end
 
   # GET /lectures/1
@@ -65,6 +65,14 @@ class LecturesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lecture
       @lecture = Lecture.find(params[:id])
+    end
+
+    def set_major
+      if params[:major_id].present?
+        @lectures = Lecture.where(:major_id => params[:major_id])
+      else
+        @lectures = Lecture.all
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
