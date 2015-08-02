@@ -8,4 +8,6 @@ $navbar-default-link-hover-bg: black;
 
 @import 'bootstrap';
 
-body { padding-top: 60px; }
+body {
+  min-height: 2000px;
+}
