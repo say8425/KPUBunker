@@ -1,7 +1,13 @@
 <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
     <ul class="nav">
         <li><%= link_to 'KPU Bunker', root_path %></li>
-        <li><%= link_to 'L O G I N', new_user_session_path %></li>
+        <% if user_signed_in? %>
+          <li><%= button_to 'L O G O U T', destroy_user_session_path, :method => :delete %></li>
+        <% elsif admin_signed_in? %>
+          <li><%= button_to 'L O G O U T', destroy_admin_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to 'L O G I N', new_user_session_path %></li>
+        <% end %>
         <li><%= link_to 'G A M E', lectures_path(:major_id => 2) %></li>
         <li><%= link_to 'C O M P U T E R', lectures_path(:major_id => 1) %></li>
     </ul>
