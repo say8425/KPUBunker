@@ -1,4 +1,5 @@
 class LecturesController < ApplicationController
+  before_filter :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
   before_action :set_major, only:  [:index]
 
