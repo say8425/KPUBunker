@@ -1,40 +1,37 @@
-<div class="col-xs-12 col-sm-9">
-    <h1>Listing Lectures</h1>
+<h1>Listing Lectures</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th colspan="3"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>name</td>
-            <td>major</td>
-            <td>grade</td>
-            <td>professors</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <% @lectures.each do |lecture| %>
-          <tr>
-              <td><%= lecture.name %></td>
-              <td><%= lecture.major_id %></td>
-              <td><%= lecture.professor_id %></td>
-              <td><%= lecture.grade %></td>
-              <td><%= link_to 'Show', lecture %></td>
-              <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
-              <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-        </tbody>
-    </table>
-
-    <br>
-
-    <% if current_admin? %>
-      <%= link_to 'New Lecture', new_lecture_path %>
+<table class="table">
+    <thead>
+    <tr>
+        <th colspan="3"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>name</td>
+        <td>major</td>
+        <td>grade</td>
+        <td>professors</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @lectures.each do |lecture| %>
+      <tr>
+          <td><%= lecture.name %></td>
+          <td><%= lecture.major_id %></td>
+          <td><%= lecture.professor_id %></td>
+          <td><%= lecture.grade %></td>
+          <td><%= link_to 'Show', lecture %></td>
+          <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+          <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
+    </tbody>
+</table>
 
-</div>
+<br>
+
+<% if current_admin? %>
+  <%= link_to 'New Lecture', new_lecture_path %>
+<% end %>

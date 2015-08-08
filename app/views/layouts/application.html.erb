@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/nav_left' %>
-  <%= yield %>
+  <div id="sidebar" class="hidden-xs col-sm-2 sidebar-offcanvas" role="navigation">
+      <%= render 'layouts/nav_left' %>
+  </div>
+
+  <div id="main" class="col-xs-12 col-sm-10" role="main">
+      <%= yield %>
+  </div>
 </body>
 </html>
