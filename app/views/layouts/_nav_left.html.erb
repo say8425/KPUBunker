@@ -3,8 +3,6 @@
         <li><%= link_to 'KPU Bunker', root_path %></li>
         <% if user_signed_in? %>
           <li><%= button_to 'L O G O U T', destroy_user_session_path, :method => :delete %></li>
-        <% elsif admin_signed_in? %>
-          <li><%= button_to 'L O G O U T', destroy_admin_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'L O G I N', new_user_session_path %></li>
         <% end %>
