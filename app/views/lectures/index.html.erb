@@ -33,7 +33,7 @@
 
     <br>
 
-    <% if admin_signed_in? %>
+    <% if current_admin? %>
       <%= link_to 'New Lecture', new_lecture_path %>
     <% end %>
 
