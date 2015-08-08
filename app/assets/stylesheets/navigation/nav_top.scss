@@ -13,7 +13,6 @@ $header-navbar-pading: 15px;
   z-index: $zindex-navbar-fixed;
 
   #navbar-header {
-    min-width: $first-navbar-width + $second-navbar-width;
     float: left;
     display: inline-flex;
     a {
@@ -22,43 +21,33 @@ $header-navbar-pading: 15px;
 
     #first-navbar-header {
       width: $first-navbar-width;
-      height: $navbar-height;
       background: #FFD14C;
       a {
-        width: 38px;
         color: #CC9700;
       }
     }
 
     #second-navbar-header {
       width: $second-navbar-width;
-      height: $navbar-height;
       background: #91180A;
       a {
-        width: 57px;
         color: #FFD14C;
       }
     }
   }
 
   #navbar-item {
-    min-width: 132px;
-    min-height: $navbar-height;
     margin: 0;
     float: right;
     ul {
       padding: 0;
       margin: 0;
-      min-height: $navbar-height;
       list-style: outside none none;
     }
 
     ul>li {
       float: left;
       line-height: $navbar-height;
-      vertical-align: middle;
-      text-align: center;
-      margin: 0;
     }
 
     ul>li>a {
