@@ -1,14 +1,14 @@
-$light-orange: #ff8c00;
-$navbar-default-color: $light-orange;
-$navbar-default-bg: #312312;
-$navbar-default-link-color: gray;
-$navbar-default-link-active-color: $light-orange;
-$navbar-default-link-hover-color: white;
-$navbar-default-link-hover-bg: black;
+$body-min-height: 2000px;
 
-@import 'bootstrap';
-@import 'nav_left';
+@import "bootstrap";
+@import "navigation/nav_top";
+@import "navigation/nav_left";
 
 body {
-  min-height: 2000px;
+  min-height: $body-min-height;
+
+  #container {
+    padding-top: $navbar-height;
+    min-height: $body-min-height - $navbar-height;
+  }
 }

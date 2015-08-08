@@ -7,12 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="sidebar" class="hidden-xs col-sm-2 sidebar-offcanvas" role="navigation">
-      <%= render 'layouts/nav_left' %>
+  <div id="navTop" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <%= render 'layouts/nav_top'  %>
   </div>
 
-  <div id="main" class="col-xs-12 col-sm-10" role="main">
-      <%= yield %>
+  <div id="container" class="wrapper">
+      <div id="sidebar" class="hidden-xs col-sm-2 sidebar-offcanvas" role="navigation">
+          <%= render 'layouts/nav_left' %>
+      </div>
+
+      <div id="main" class="col-xs-12 col-sm-10" role="main">
+          <%= yield %>
+      </div>
   </div>
 </body>
 </html>
