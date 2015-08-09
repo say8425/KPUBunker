@@ -13,11 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150808110430) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lectures", force: :cascade do |t|
     t.string   "name",         limit: 255, null: false
-    t.float    "grade",        limit: 24
-    t.integer  "major_id",     limit: 4
-    t.integer  "professor_id", limit: 4
+    t.float    "grade"
+    t.integer  "major_id"
+    t.integer  "professor_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150808110430) do
 
   create_table "majors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
-    t.integer  "lecture_id", limit: 4
+    t.integer  "lecture_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150808110430) do
 
   create_table "professors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
-    t.integer  "major_id",   limit: 4
-    t.integer  "lecture_id", limit: 4
+    t.integer  "major_id"
+    t.integer  "lecture_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -46,12 +49,12 @@ ActiveRecord::Schema.define(version: 20150808110430) do
   add_index "professors", ["major_id"], name: "index_professors_on_major_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.float    "rating_unit",    limit: 24
-    t.float    "rating_quality", limit: 24
-    t.text     "content",        limit: 65535
-    t.integer  "lecture_id",     limit: 4
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.float    "rating_unit"
+    t.float    "rating_quality"
+    t.text     "content"
+    t.integer  "lecture_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "reviews", ["lecture_id"], name: "index_reviews_on_lecture_id", using: :btree
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150808110430) do
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255

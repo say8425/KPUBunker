@@ -2,15 +2,14 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
-# Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'rails'
+gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -27,11 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.1'
 
 # Bootstrap
-gem 'bootstrap-sass', '~>3.3.4.1'
-gem 'simple_form', '~>3.1.0'
+gem 'bootstrap-sass'
+gem 'simple_form'
 
 # Server
-gem 'thin', '~>1.6.3'
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,16 +42,16 @@ gem 'thin', '~>1.6.3'
 # gem 'capistrano-rails', group: :development
 
 # Database
-gem 'immigrant', '~>0.3.4'
+gem 'immigrant'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  gem 'better_errors', '~>2.1.1'
-  gem 'binding_of_caller', '~>0.7.2'
+  gem 'web-console'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
