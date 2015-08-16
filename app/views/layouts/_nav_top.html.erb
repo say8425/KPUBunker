@@ -1,19 +1,17 @@
-<div id="navbar-header">
-    <div id="first-navbar-header">
-        <%= link_to root_path, :class => 'navbar-brand' do %> <b>KPU</b> <% end %>
-    </div>
-    <div id="second-navbar-header">
-        <%= link_to Bunker, root_path, :class => 'navbar-brand' %>
-    </div>
+<div class="navbar-header">
+    <%= link_to root_path, :class => 'navbar-brand', :id => 'kpu' do %> KPU <% end %>
+    <%= link_to root_path, :class => 'navbar-brand', :id => 'bunker' do %> Bunker <% end %>
 </div>
 
-<div id="navbar-item">
-    <ul>
+<div class="navbar-collapse collapse navbar-responsive-collapse">
+    <form class="navbar-form navbar-left">
+        <input class="form-control col-lg-8" type="text" placeholder="Search"></input>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Login', new_user_session_path %></li>
         <% end %>
-        <li><a href="#about">About</a></li>
     </ul>
 </div>
