@@ -6,6 +6,9 @@ $navbar-height: 42px;
 @import "navigation/nav_top";
 @import "navigation/nav_left";
 
+// Web Font
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 body {
   min-height: $body-min-height;
 
