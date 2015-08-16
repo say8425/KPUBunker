@@ -5,12 +5,14 @@ $navbar-height: 42px;
 @import "extern/material-fullpalette";
 @import "navigation/nav_top";
 @import "navigation/nav_left";
+@import "tak";
 
 // Web Font
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 body {
   min-height: $body-min-height;
+  background: white;
 
   #container {
     padding-top: $navbar-height;
