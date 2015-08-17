@@ -6,12 +6,14 @@
           </div>
 
           <div class="tak-circle">
-              <p><%= lecture.grade %></p>
+              <p><%= makeGradeString(lecture) %></p>
           </div>
 
           <div class="tak-content">
-              <p><%= lecture.name %> / <%= lecture.professor_id %></p>
+              <p><%= lecture.name %> / <%= Major.find_by_id(lecture.major_id).name %></p>
               <p>content!!!</p>
+              <p><%= link_to 'Edit', edit_lecture_path(lecture) %></p>
+
           </div>
       </div>
       <div class="col-sm-1"></div>
@@ -20,6 +22,12 @@
 
 <br>
 
+<% if user_signed_in? %>
+  <%= link_to '평가하고 싶다!', new_review_path %>
+<% end %>
+
+<br>
+
 <% if current_admin? %>
-  <%= link_to 'New Lecture', new_lecture_path %>
+  <%= link_to '강의 추가하기', new_lecture_path %>
 <% end %>
