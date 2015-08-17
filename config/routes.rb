@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'lectures#index'
 
   resources :lectures
+  resources :reviews
   
   devise_for :users
 
