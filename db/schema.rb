@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808110430) do
+ActiveRecord::Schema.define(version: 20150817125213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,10 @@ ActiveRecord::Schema.define(version: 20150808110430) do
 
   create_table "majors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
-    t.integer  "lecture_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "color"
   end
-
-  add_index "majors", ["lecture_id"], name: "index_majors_on_lecture_id", using: :btree
 
   create_table "professors", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
